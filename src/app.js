@@ -7,9 +7,9 @@ const request = require('request')
 const geoCode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
-// console.log(__dirname)
-// console.log(path.join(__dirname,'../public'))
 const app = express()
+
+const port = process.env.PORT || 3000
 
 //define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -107,6 +107,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('App is up and running at port 3000')
+app.listen(port, () => {
+    console.log('App is up and running at port ' + port)
 })
